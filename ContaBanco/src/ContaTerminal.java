@@ -1,18 +1,36 @@
-import java.util.Scanner;
+import java.util.Scanner; // Importando a classe Scanner para ler entradas do usuário
 
 public class ContaTerminal {
-    public static void main(String[] args) throws Exception {
-        Scanner sc = new Scanner(System.in);
-        int numero = 1021;
-        String agencia;
+    public static void main(String[] args) {
+        // Criando o objeto Scanner para ler os dados do terminal
+        Scanner scanner = new Scanner(System.in);
 
-        String nomeClient = "Estêvão Martins Fidelis";
-        double saldo = 237.48;
+        // Declarando as variáveis necessárias
+        int numero;
+        String agencia, nomeCliente;
+        double saldo;
 
-        System.out.println("Por favor, digite o número da Agência !");
-        agencia = sc.nextLine();
+        // Pedindo os dados ao usuário e lendo as entradas
+        System.out.println("Por favor, digite o número da Conta: ");
+        numero = scanner.nextInt(); // Lendo o número da conta
 
-        System.out.println("Olá " + nomeClient + ", obrigado por criar uma conta em nosso banco, sua agência é " + agencia + ", conta " + numero + " e seu saldo " +saldo + " já está disponível para saque");
-    
+        // Consumindo o newline (enter) que fica na memória após o nextInt()
+        scanner.nextLine(); 
+
+        System.out.println("Por favor, digite o número da Agência: ");
+        agencia = scanner.nextLine(); // Lendo a agência
+
+        System.out.println("Por favor, digite o nome do Cliente: ");
+        nomeCliente = scanner.nextLine(); // Lendo o nome do cliente
+
+        System.out.println("Por favor, digite o saldo da Conta: ");
+        saldo = scanner.nextDouble(); // Lendo o saldo da conta
+
+        // Exibindo a mensagem final com as informações fornecidas
+        System.out.println("Olá " + nomeCliente + ", obrigado por criar uma conta em nosso banco, " +
+                "sua agência é " + agencia + ", conta " + numero + " e seu saldo " + saldo + " já está disponível para saque.");
+
+        // Fechando o scanner
+        scanner.close();
     }
 }
